@@ -3,7 +3,7 @@ kind: Service
 metadata:
   name: frontend
   labels:
-    app: guestbook
+    app: gitops-guestbook
     tier: frontend
 spec:
   # comment or delete the following line if you want to use a LoadBalancer
@@ -14,5 +14,5 @@ spec:
   ports:
   - port: 80
   selector:
-    app: guestbook
+    app: gitops-guestbook
     tier: frontend
