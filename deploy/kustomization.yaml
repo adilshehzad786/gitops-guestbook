@@ -1,0 +1,19 @@
+apiVersion: kustomize.config.k8s.io/v1beta1
+kind: Kustomization
+resources:
+- frontend-deployment.yaml
+- frontend-service.yaml
+- redis-master-deployment.yaml
+- redis-master-service.yaml
+- redis-slave-deployment.yaml
+- redis-slave-service.yaml
+
+images:
+- name: 457472006214.dkr.ecr.us-west-1.amazonaws.com/guestbook
+  newTag: d6cbdc0df33ef5f5dce803931e4d89031865223b
+- name: frontend
+  newName: guestbook
+  newTag: 3fa38b9d2acb82a6e567c5935d1037a1339e4f1d
+- name: guestbook
+  newName: guestbook
+  newTag: new
